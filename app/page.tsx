@@ -220,7 +220,7 @@ export default function Home() {
           </p>
           <nav className="flex gap-5 text-sm">
             <a
-              href="https://www.linkedin.com/in/yahorpunko/"
+              href="https://www.linkedin.com/in/yahor-punko/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted hover:text-terracotta transition-colors duration-200"
