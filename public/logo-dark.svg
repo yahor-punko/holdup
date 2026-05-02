@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 40" width="200" height="40">
+  <!--
+    Holdup horizontal wordmark — ink (dark) variant
+    Identical geometry to logo.svg; only the fill/stroke colour changes
+    from terracotta #A8584A to near-black #141414.
+    Use on light backgrounds where terracotta would be too prominent.
+  -->
+
+  <!-- Geometric mark: raised tray / upward bracket, ink colour -->
+  <g fill="none" stroke="#141414" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter"
+     transform="translate(2, 9)">
+    <!--
+      Scaled mark (scale factor: 22/32 = 0.6875):
+      Top bar: x=3.44 to x=18.56, y=6.88
+      Left arm: x=3.44, y=6.88 to y=15.13
+      Right arm: x=18.56, y=6.88 to y=15.13
+    -->
+    <line x1="3.4" y1="6.9" x2="18.6" y2="6.9"/>
+    <line x1="3.4" y1="6.9" x2="3.4" y2="15.1"/>
+    <line x1="18.6" y1="6.9" x2="18.6" y2="15.1"/>
+  </g>
+
+  <!-- Wordmark: "holdup" in Cormorant Garamond italic, ink colour -->
+  <text
+    x="30"
+    y="30"
+    font-family="'Cormorant Garamond', 'Cormorant', Georgia, serif"
+    font-style="italic"
+    font-weight="600"
+    font-size="28"
+    fill="#141414"
+    letter-spacing="0.02em"
+  >holdup</text>
+</svg>
