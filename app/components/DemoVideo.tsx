@@ -8,7 +8,10 @@ export default function DemoVideo() {
   const videoRef = useRef<HTMLVideoElement>(null)
 
   const handlePlay = () => {
-    videoRef.current?.play()
+    if (videoRef.current) {
+      videoRef.current.muted = false
+      videoRef.current.play()
+    }
     setPlaying(true)
   }
 
@@ -79,12 +82,16 @@ export default function DemoVideo() {
         </div>
       )}
 
-      {/* ── Video ── */}
+      {/* ── Video — autoplays muted on desktop; placeholder shown until onPlay fires ── */}
       {!failed && (
         <video
           ref={videoRef}
-          controls
+          autoPlay
+          muted
+          loop
           playsInline
+          controls
+          onPlay={() => setPlaying(true)}
           onError={() => setFailed(true)}
           className="absolute inset-0 w-full h-full object-contain transition-opacity duration-300"
           style={{ opacity: playing ? 1 : 0, pointerEvents: playing ? 'auto' : 'none' }}
