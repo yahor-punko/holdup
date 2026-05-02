@@ -27,12 +27,10 @@ export default function DemoVideo() {
         </p>
       </div>
 
-      {/* Video — covers placeholder once loaded */}
+      {/* Video — covers placeholder once loaded. No autoPlay/muted so sound works on click. */}
       {!failed && (
         <video
-          autoPlay
-          loop
-          muted
+          controls
           playsInline
           onError={() => setFailed(true)}
           className="absolute inset-0 w-full h-full object-contain"
