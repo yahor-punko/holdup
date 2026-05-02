@@ -1,0 +1,35 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd /Users/yahorpunko/Documents/Holdup && ./scripts/mavp-operator --agent"
+          }
+        ]
+      }
+    ],
+    "PostCompact": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd /Users/yahorpunko/Documents/Holdup && echo '=== STATE RESTORED AFTER COMPACTION ===' && ./scripts/mavp-operator --agent"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd /Users/yahorpunko/Documents/Holdup && ./scripts/mavp-operator --validate 2>&1"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,58 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+SCRIPT_DIR="$(cd -- "$(dirname -- "$0")" && pwd)"
+PROJECT_ROOT="$(cd -- "$SCRIPT_DIR/.." && pwd)"
+
+MAVERICKS="${MAVERICKS_HOME:-$HOME/Documents/mavericks}/scripts"
+
+export MAVERICKS_PROJECT_ROOT="$PROJECT_ROOT"
+export MAVERICKS_SCRIPTS="$MAVERICKS"
+
+if [[ "${1-}" == "--help" ]]; then
+  echo "Usage: ./scripts/mavp-operator [flag]"
+  echo ""
+  echo "Flags:"
+  echo "  --agent          Print session context summary for the Main Agent"
+  echo "  --watch          Dashboard watch mode (r = refresh, s = snapshot, q = quit)"
+  echo "  --snapshot       Print a text snapshot of current project state"
+  echo "  --close-session  Run end-of-session ritual (summarise, bump wave, commit)"
+  echo "  --new-task       Interactively create and register a new task"
+  echo "  --update-task    Interactively update an existing task"
+  echo "  --validate       Run the parliamentary validator (artifact sync check)"
+  echo "  --install        Bootstrap Mavericks into a target project directory"
+  echo "  --strip          Remove all Mavericks files from a project (pre-publish)"
+  echo "  --version        Print the installed Mavericks framework version"
+  echo "  --help           Show this help message and exit"
+  echo ""
+  echo "(no flag)          Open the operator dashboard"
+  exit 0
+elif [[ "${1-}" == "--snapshot" ]]; then
+  shift
+  node "$MAVERICKS/mavp-operator-snapshot.js" "$@"
+elif [[ "${1-}" == "--agent" ]]; then
+  shift
+  node "$SCRIPT_DIR/mavp-operator-agent.js" "$@"
+elif [[ "${1-}" == "--close-session" ]]; then
+  shift
+  node "$SCRIPT_DIR/mavp-operator-close-session.js" "$@"
+elif [[ "${1-}" == "--new-task" ]]; then
+  shift
+  node "$MAVERICKS/mavp-operator-new-task.js" "$@"
+elif [[ "${1-}" == "--update-task" ]]; then
+  shift
+  node "$MAVERICKS/mavp-operator-update-task.js" "$@"
+elif [[ "${1-}" == "--validate" ]]; then
+  shift
+  node "$MAVERICKS/parliamentary-validator-parser-v1.js" "$@"
+elif [[ "${1-}" == "--install" ]]; then
+  shift
+  node "$MAVERICKS/mavp-install.js" "$@"
+elif [[ "${1-}" == "--strip" ]]; then
+  shift
+  node "$MAVERICKS/mavp-install.js" --strip "$PROJECT_ROOT" "$@"
+elif [[ "${1-}" == "--version" ]]; then
+  node -e "const {MAVERICKS_VERSION}=require('$MAVERICKS/mavp-version.js');console.log('mavericks v'+MAVERICKS_VERSION);"
+else
+  node "$MAVERICKS/mavp-operator-dashboard.js" "$@"
+fi

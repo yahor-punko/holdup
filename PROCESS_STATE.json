@@ -1,0 +1,12 @@
+{
+  "initiative": "New project",
+  "stage": "execution",
+  "wave": 1,
+  "active_slices": [],
+  "next_action": null,
+  "blocker": null,
+  "stage_owner": "main_agent",
+  "last_task_id": 0,
+  "mavericks_version": "0.4.0",
+  "last_updated": "2026-05-02"
+}

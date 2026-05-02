@@ -1,0 +1,6 @@
+Place your demo video here as: demo.mp4
+
+- Vertical (9:16) — default container is already set for this
+- Horizontal (16:9) — in app/page.tsx, change:
+    style={{ aspectRatio: '9/16' }}  →  style={{ aspectRatio: '16/9' }}
+  and adjust the height value as needed.

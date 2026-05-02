@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Grain overlay ── */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 300px 300px;
+  opacity: 0.028;
+}
+
+/* ── Hero entrance animations ── */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-wordmark { animation: fadeUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.05s both; }
+.hero-video    { animation: fadeUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.20s both; }
+.hero-tagline  { animation: fadeUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.40s both; }
+.hero-hint     { animation: fadeUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.55s both; }
+
+/* ── Scroll reveal ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity  0.65s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Editorial bullet list ── */
+.bullet-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.bullet-list li {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.bullet-list li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: #A8584A;
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-size: 1.1em;
+  line-height: inherit;
+}

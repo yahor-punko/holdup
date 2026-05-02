@@ -1,0 +1,11 @@
+
+# Mavericks operating model — not for distribution
+BACKLOG.md
+TASK_STATUS.md
+PROCESS_STATE.md
+PROCESS_STATE.json
+EXECUTION_LOG.md
+.claude/
+scripts/mavp-operator
+scripts/mavp-operator-agent.js
+scripts/mavp-operator-close-session.js
