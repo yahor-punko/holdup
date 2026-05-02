@@ -33,7 +33,7 @@ export default function Home() {
               letterSpacing="0.4"
             >holdup</text>
             <path
-              d="M70 19 L74 15 L78 19"
+              d="M84 19 L88 15 L92 19"
               stroke="#C0392B"
               strokeWidth="1.8"
               strokeLinecap="round"
