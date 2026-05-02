@@ -14,9 +14,13 @@ export default function Home() {
 
         {/* Wordmark */}
         <header className="hero-wordmark flex-none">
-          <span className="font-display italic text-terracotta text-[1.125rem] tracking-tight select-none">
-            holdup
-          </span>
+          <img
+            src="/logo.svg"
+            alt="holdup"
+            width={80}
+            height={37}
+            className="select-none"
+          />
         </header>
 
         {/* Video + tagline */}

@@ -19,6 +19,10 @@ const cormorant = Cormorant_Garamond({
 export const metadata: Metadata = {
   title: 'Holdup — sell it while you\'re streaming',
   description: 'Hold up a QR. Start an auction. Sell it before the timer ends. A weekend experiment. Not a product yet.',
+  icons: {
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+  },
   openGraph: {
     title: 'Holdup',
     description: 'Hold up a QR. Start an auction. Sell it before the timer ends.',
