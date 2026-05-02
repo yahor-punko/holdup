@@ -12,15 +12,35 @@ export default function Home() {
       {/* ── Hero ── */}
       <section className="relative min-h-screen flex flex-col px-6 py-8 md:px-12 md:py-10">
 
-        {/* Wordmark */}
+        {/* Wordmark — inline SVG so Cormorant Garamond loads correctly */}
         <header className="hero-wordmark flex-none">
-          <img
-            src="/logo.svg"
-            alt="holdup"
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 120 56"
+            fill="none"
             width={80}
             height={37}
+            aria-label="holdup"
             className="select-none"
-          />
+          >
+            <text
+              x="10" y="44"
+              fontFamily="'Cormorant Garamond', Georgia, serif"
+              fontStyle="italic"
+              fontWeight={500}
+              fontSize={34}
+              fill="#1F1F1F"
+              letterSpacing="0.4"
+            >holdup</text>
+            <path
+              d="M70 19 L74 15 L78 19"
+              stroke="#C0392B"
+              strokeWidth="1.8"
+              strokeLinecap="round"
+              strokeLinejoin="miter"
+              fill="none"
+            />
+          </svg>
         </header>
 
         {/* Video + tagline */}

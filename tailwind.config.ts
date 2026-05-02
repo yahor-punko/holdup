@@ -10,7 +10,7 @@ const config: Config = {
         'warm-white': '#FAFAF7',
         'ink':        '#141414',
         'muted':      '#6B6B6B',
-        'terracotta': '#A8584A',
+        'terracotta': '#C0392B',
         'hairline':   '#E5E2DA',
       },
       fontFamily: {
